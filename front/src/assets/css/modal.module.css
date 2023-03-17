@@ -1,7 +1,7 @@
 .container {
   /* 모달창 크기 */
   width: 80%;
-  height: 70%;
+  height: 80%;
 
   /* 최상단 위치 */
   z-index: 999;
@@ -15,7 +15,15 @@
   transform: translate(-50%, -50%);
 
   /* 모달창 디자인 */
-  background-color: gray;
+  background-color: white;
   border: 1px solid black;
   border-radius: 8px;
+
+  padding: 30px;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
 }
