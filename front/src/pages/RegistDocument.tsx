@@ -38,9 +38,9 @@ function RegistDocument() {
   return (
     <>
       <TopNavbar />
-      <Modal />
+      {modalStatus && <Modal />}
       <DocsInput>
-        <div style={{ textAlign: "center" }}>
+        <div style={{ textAlign: "center", cursor: "pointer" }} onClick={() => modalOpen()}>
           <i className="xi-folder-add-o" style={{ fontSize: 50 }} />
           <br />
           파일을 추가해주세요.
