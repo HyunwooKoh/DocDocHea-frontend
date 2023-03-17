@@ -6,6 +6,7 @@ import Signin from "./pages/Signin";
 import Index from "./pages/Index";
 import RegistDocument from "./pages/RegistDocument";
 import reportWebVitals from "./reportWebVitals";
+import ViewDocument from "./pages/ViewDocument";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
@@ -15,6 +16,7 @@ root.render(
       <Route path="/signup" element={<Signup />} />
       <Route path="/signin" element={<Signin />} />
       <Route path="/registDoc" element={<RegistDocument />} />
+      <Route path="/viewDoc" element={<ViewDocument />} />
     </Routes>
   </BrowserRouter>,
 );
