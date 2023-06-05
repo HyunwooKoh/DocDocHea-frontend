@@ -58,7 +58,14 @@ function Signup() {
         <br />
         <br />
       </form>
-      <LoginButton type="submit">회원가입</LoginButton>
+      <LoginButton
+        type="submit"
+        onClick={() => {
+          window.location.replace("/signin");
+        }}
+      >
+        회원가입
+      </LoginButton>
     </Container>
   );
 }
