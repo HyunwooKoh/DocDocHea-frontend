@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import useNavbarStatus from "../stores/useNavbarStatus";
 
 function TopNavbar() {
-  const [isLogin, setIsLogin] = useState<boolean>(true);
   const { selectedMenu, setSelectedMenu } = useNavbarStatus();
-
-  console.log(selectedMenu);
 
   function topStatus(status: number) {
     if (status == 0) {
@@ -17,7 +14,7 @@ function TopNavbar() {
           <Nav.Link href="/registDoc" onClick={() => setSelectedMenu(1)}>
             문서 등록하기
           </Nav.Link>
-          <Nav.Link href="#features" onClick={() => setSelectedMenu(2)}>
+          <Nav.Link href="/viewDoc" onClick={() => setSelectedMenu(2)}>
             문서 조회하기
           </Nav.Link>
         </>
@@ -28,7 +25,7 @@ function TopNavbar() {
           <Nav.Link style={{ color: "white" }} href="/registDoc" onClick={() => setSelectedMenu(1)}>
             문서 등록하기
           </Nav.Link>
-          <Nav.Link href="#features" onClick={() => setSelectedMenu(2)}>
+          <Nav.Link href="/viewDoc" onClick={() => setSelectedMenu(2)}>
             문서 조회하기
           </Nav.Link>
         </>
@@ -39,7 +36,7 @@ function TopNavbar() {
           <Nav.Link href="/registDoc" onClick={() => setSelectedMenu(1)}>
             문서 등록하기
           </Nav.Link>
-          <Nav.Link style={{ color: "white" }} href="#features" onClick={() => setSelectedMenu(2)}>
+          <Nav.Link style={{ color: "white" }} href="/viewDoc" onClick={() => setSelectedMenu(2)}>
             문서 조회하기
           </Nav.Link>
         </>
@@ -55,7 +52,7 @@ function TopNavbar() {
             <strong>DDH</strong>
           </Navbar.Brand>
           <Nav className="me-auto">{topStatus(Number(sessionStorage.getItem("navStatus")))}</Nav>
-          {isLogin ? (
+          {sessionStorage.getItem("isLogin") == "true" ? (
             <Nav>
               <Navbar.Text style={{ color: "white" }}>이승현님, 환영합니다</Navbar.Text>
               <Nav.Link href="#home">로그아웃</Nav.Link>
